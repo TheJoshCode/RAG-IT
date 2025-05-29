@@ -25,7 +25,7 @@ class RAGIT:
         clip_model_name: str = 'openai/clip-vit-base-patch32',
         max_file_size_mb: int = 100
     ):
-        logger.info("Initializing RAGIT...")
+        logger.info("Initializing RAG-IT...")
         self.max_file_size_mb = max_file_size_mb
         try:
             self.text_model = SentenceTransformer(text_model_name)
@@ -141,7 +141,7 @@ class RAGIT:
             logger.error(f"Error saving embedding for {file_path}: {e}")
             raise
     
-    def ragify_text(self, file_path: str, output_dir: Optional[str] = None) -> str:
+    def ragit_text(self, file_path: str, output_dir: Optional[str] = None) -> str:
         logger.info(f"Ragifying text file: {file_path}")
         try:
             self._validate_file(file_path)
@@ -155,7 +155,7 @@ class RAGIT:
             logger.error(f"Error ragifying text file {file_path}: {e}")
             raise
     
-    def ragify_pdf(self, file_path: str, output_dir: Optional[str] = None) -> str:
+    def ragit_pdf(self, file_path: str, output_dir: Optional[str] = None) -> str:
         logger.info(f"Ragifying PDF file: {file_path}")
         try:
             self._validate_file(file_path)
@@ -166,7 +166,7 @@ class RAGIT:
             logger.error(f"Error ragifying PDF file {file_path}: {e}")
             raise
     
-    def ragify_docx(self, file_path: str, output_dir: Optional[str] = None) -> str:
+    def ragit_docx(self, file_path: str, output_dir: Optional[str] = None) -> str:
         logger.info(f"Ragifying DOCX file: {file_path}")
         try:
             self._validate_file(file_path)
@@ -177,7 +177,7 @@ class RAGIT:
             logger.error(f"Error ragifying DOCX file {file_path}: {e}")
             raise
     
-    def ragify_image(self, file_path: str, output_dir: Optional[str] = None) -> str:
+    def ragit_image(self, file_path: str, output_dir: Optional[str] = None) -> str:
         logger.info(f"Ragifying image file: {file_path}")
         try:
             self._validate_file(file_path)
@@ -188,7 +188,7 @@ class RAGIT:
             logger.error(f"Error ragifying image file {file_path}: {e}")
             raise
     
-    def ragify_video(self, file_path: str, max_frames: int = 10, output_dir: Optional[str] = None) -> str:
+    def ragit_video(self, file_path: str, max_frames: int = 10, output_dir: Optional[str] = None) -> str:
         logger.info(f"Ragifying video file: {file_path}")
         try:
             self._validate_file(file_path)
@@ -200,7 +200,7 @@ class RAGIT:
             logger.error(f"Error ragifying video file {file_path}: {e}")
             raise
     
-    def ragify_batch(self, file_paths: List[str], output_dir: Optional[str] = None, max_frames: int = 10) -> List[str]:
+    def ragit_batch(self, file_paths: List[str], output_dir: Optional[str] = None, max_frames: int = 10) -> List[str]:
         logger.info(f"Processing batch of {len(file_paths)} files")
         output_files = []
         supported_extensions = {
