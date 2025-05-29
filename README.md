@@ -32,8 +32,6 @@ pip install -r requirements.txt
 # Usage
 Basic Example
 ```bash
-python
-
 from ragit import RagIt
 
 # Initialize RAG-IT
