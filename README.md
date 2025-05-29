@@ -22,8 +22,8 @@ A Python library for generating embeddings from various file types (text, PDFs, 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/ragify.git
-   cd ragify
+   git clone https://github.com/TheJoshCode/rag-it.git
+   cd ragit
    ```
 2. Install dependencies:
 ```bash
