@@ -18,14 +18,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-class RAG-IT:
+class RAGIT:
     def __init__(
         self,
         text_model_name: str = 'all-MiniLM-L6-v2',
         clip_model_name: str = 'openai/clip-vit-base-patch32',
         max_file_size_mb: int = 100
     ):
-        logger.info("Initializing RAG-IT...")
+        logger.info("Initializing RAGIT...")
         self.max_file_size_mb = max_file_size_mb
         try:
             self.text_model = SentenceTransformer(text_model_name)
